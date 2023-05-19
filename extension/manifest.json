@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "b2's OpenAI Text Fixer / Text Helper",
+  "version": "0.1",
+  "description": "A Chrome extension to fix text (or do other stuff with selected text) using ChatGPT API",
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "b2's OpenAI Text Fixer / Text Helper Options"
+  },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
