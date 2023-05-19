@@ -1,7 +1,7 @@
 chrome.runtime.onInstalled.addListener(function () {
   chrome.contextMenus.create({
     id: "fix-text",
-    title: "Fix / improve / modify selected text with OpenAI",
+    title: "Fix / modify selected text with OpenAI",
     contexts: ["selection"],
   });
 });
