@@ -20,6 +20,7 @@ function getApiKeyAndCheck(callback) {
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  console.log("XXX")
   if (request.message === "fixText") {
     getApiKeyAndCheck(function () {
       var selectedText = request.selectedText;

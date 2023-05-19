@@ -7,6 +7,7 @@ chrome.runtime.onInstalled.addListener(function () {
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
+  console.log(info, tab)
   if (info.menuItemId === "fix-text") {
     chrome.tabs.sendMessage(tab.id, {
       message: "fixText",
