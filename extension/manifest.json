@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "b2's OpenAI Text Fixer / Text Helper",
-  "version": "0.1",
+  "version": "0.2",
   "description": "A Chrome extension to fix text (or do other stuff with selected text) using ChatGPT API",
   "permissions": [
     "contextMenus",
