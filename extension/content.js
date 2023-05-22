@@ -20,7 +20,6 @@ function getApiKeyAndCheck(callback) {
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log("XXX")
   if (request.message === "fixText") {
     getApiKeyAndCheck(function () {
       var selectedText = request.selectedText;
@@ -94,15 +93,13 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 var newWindow = null;
 
 function setWinContent(text) {
-  console.log(newWindow);
   if (!newWindow || newWindow.closed) {
     newWindow = window.open("", "_blank", "width=600,height=400");
   }
   newWindow.document.body.innerHTML = text;
 }
 
-const template_start = `
-<!DOCTYPE html>
+const template_start = `<!DOCTYPE html>
 <html>
 
 <head>
@@ -132,24 +129,10 @@ const template_start = `
         }
     </style>
 </head>
+<body>`;
 
-<body>
-`;
-
-const template_end = `
-</body>
-`;
+const template_end = `</body>`;
 
 function openFixedTextWindow(fixedText) {
-  setWinContent(
-    template_start +
-      `
-    <pre class="form-control" id="txt" style="white-space: pre-wrap;">
- ` +
-      fixedText +
-      `
-    </pre>
- ` +
-      template_end
-  );
+  setWinContent(`${template_start}<pre class="form-control" id="txt" style="white-space: pre-wrap;">${fixedText}</pre>${template_end}`);
 }
