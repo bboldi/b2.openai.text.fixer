@@ -59,7 +59,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
             },
             {
               role: "user",
-              content: selectedText,
+              content: `${actionPrompt} the following text: "${selectedText}"`,
             },
           ],
           max_tokens: parseInt(maxTokens),
