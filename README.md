@@ -1,5 +1,7 @@
 # OpenAI Text Fixer
 
+[**Chrome Extension**](https://chrome.google.com/webstore/detail/b2s-openai-text-fixer-tex/fcjapeehmcedchpelcbmkdcgdfbdljhm)
+
 OpenAI Text Fixer is a Chrome extension that allows users to select a text and send it to OpenAI API to perform an action on it, and then it displays the result in a window. The default action is "fix this text," but it can be changed before sending the request. 
 
 Before using the extension, users will need to set the maximum number of tokens and the OpenAI key in the options window. 
